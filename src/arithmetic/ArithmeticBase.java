@@ -11,17 +11,29 @@ import java.util.Scanner;
  * from user and execute the arithmetic operation
  * change the code to use enum instead String and mention the advantage of enum.
  * @author sivagamasrinivasan
- * 
+ * enums help to avoid string errors as enums 
+ * are special classes for constants and it makes the code reusable.
  */
 public class ArithmeticBase 
 {
  public double x,y;
+ public enum Operators {PLUS, MINUS, DIVIDE, TIMES};
+        
+    private Operators operators;
+
     double calculate(double x, double y) 
         {
-        Scanner sc =new Scanner(System.in);
-        System.out.println("Enter arithmetic operation to Perform: ");
-        String s= sc.next();
-        switch (s.toUpperCase()) 
+        
+        public Operators(operators o){
+            
+            this.operators = o;        
+            Scanner sc =new Scanner(System.in);
+            System.out.println("Enter arithmetic operation to Perform: ");
+            enums = in.next();
+        
+        }
+     
+        switch (enums) 
         {
             case "PLUS":
                 return x + y;
@@ -34,6 +46,6 @@ public class ArithmeticBase
             default:
                 throw new AssertionError("Unknown operations " + this);
         }
-    }
    
+    }
 }
